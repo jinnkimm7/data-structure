@@ -2,10 +2,17 @@
 - 먼저 들어온 데이터가 먼저 나가는 형식의 자료구조이다.
   - FIFO(First In First Out)
 - 입구와 출구가 모두 뚫려 있는 터널과 같은 형태로 시각화 할 수 있다. 
+- LinkedList 클래스를 이용해 Queue를 구현한다.
+  - ```java
+    Queue<Integer> queue = new LinkedList<>();
+    ```
+- 참고: 큐는 어디에 많이 쓰일까?
+  - 멀티 태스킹을 위한 프로세스 스케쥴링 방식을 구현하기 위해 많이 사용된다.(운영체제 참조)
+  - 큐의 경우에는 장단점 보다는, 큐의 활용 예로 프로세스 스케쥴링 방식을 함께 이해해두는 것이 좋다.
 
 ## 주요 메서드
-- add()
-- remove()
+- add(), offer()
+- remove(), poll()
 - peek()
 - isEmpty()
 
