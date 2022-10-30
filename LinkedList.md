@@ -128,6 +128,31 @@ public class LinkedList {
   public Object removeLast() {
     return remove(size - 1);
   }
+
+  // size 구현
+  public int size() {
+    return size;
+  }
+
+  // get 구현
+  public Object get(int k) {
+    Node temp = node(k);
+    return temp.data;
+  }
+
+  // indexOf 구현
+  public int indexOf(Object data) {
+    Node temp = head;
+    int index = 0;
+    while(temp.data != data) {
+      temp = temp.next;
+      index++;
+      if(temp == null) {
+        return -1;
+      }
+    }
+    return index;
+  }
 }
 
 
