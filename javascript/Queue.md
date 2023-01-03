@@ -6,7 +6,7 @@
 ### 1. Array 이용하기
 
 - push(), shift()
-- reindexing을 피할 수 없다.
+- re indexing을 피할 수 없다.
 ```javascript
 let queue = [];
 
@@ -21,40 +21,48 @@ queue.shift(); // THIRD
 ### 2. Linked List 이용하기
 ```javascript
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
 class Queue {
-  constructor(){
+  constructor {
     this.first = null;
     this.last = null;
     this.size = 0;
   }
-  
-  enqueue(val){
-    var newNode = new Node(val);
-    if(!this.first){
+
+  enqueue(value) {
+    const newNode = new Node(value);
+    
+    if(!this.first) {
       this.first = newNode;
       this.last = newNode;
     } else {
       this.last.next = newNode;
       this.last = newNode;
     }
-      return ++this.size;
-    }
+    return ++this.size;
+  }
 
-  dequeue(){
+  dequeue() {
     if(!this.first) return null;
-    var temp = this.first;
+
+    let temp = this.first;
     if(this.first === this.last) {
       this.last = null;
     }
-    this.first = this.first.next;
+    this.first = currentFirst.next;
     this.size--;
     return temp.value;
   }
 }
 ```
+
+## Queue의 Big O
+- Insertion - O(1)
+- Removal - O(1)
+- Searching - O(N)
+- Access - O(N)
