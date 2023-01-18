@@ -87,6 +87,35 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  BFS() {
+    let node = this.root;
+    const data = [],
+          queue = [];
+
+    queue.push(node);
+    while(queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if(node.left) queue.push(node.left);
+      if(node.right) queue.push(node.right);
+    }
+
+    return data;
+  }
+
+  DFSPreOrder() {
+    const data = [];
+    function traverse(node) {
+      data.push(node.value);
+      if(node.left) traverse(node.left);
+      if(node.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
 }
 ```
 
@@ -94,3 +123,6 @@ class BinarySearchTree {
 - insertion - `O(log N)`
 - searching - `O(log N)`
 
+## 트리 순회
+- Breath-first Search
+- Depth-first Search
